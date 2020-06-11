@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+      
+        <title></title>
+       
+    </head>
+    <body>
+    
+        <script>
+            function computerPlay(){
+                let computerChoice = Math.floor((Math.random() * 3) + 1);
+
+                if(computerChoice == 1){
+                    return "Rock";
+                }
+
+                else if(computerChoice == 2){
+                    return "Paper";
+
+                }
+
+                else return "Scissors";
+
+            }
+            function playRound(selectGesture){
+                let computerSelection = computerPlay();
+                let playerSelection = selectGesture.charAt(0).toUpperCase()+ selectGesture.slice(1).toLowerCase();
+                if((playerSelection=="Rock"&& computerSelection=="Paper")||(playerSelection=="Scissors"&& computerSelection=="Rock")||(playerSelection=="Paper"&& computerSelection=="Scissors")){
+                    return `You lose! ${computerSelection} beats ${playerSelection}!`;
+
+                }
+
+                else if(computerSelection==playerSelection) {
+                    return "It's a tie!"
+
+                }
+
+                else return `You Win! ${playerSelection} beats ${computerSelection}`;
+
+            }
+
+
+        </script>
+
+
+
+      
+    </body>
+</html>
