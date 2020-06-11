@@ -26,20 +26,48 @@
             function playRound(selectGesture){
                 let computerSelection = computerPlay();
                 let playerSelection = selectGesture.charAt(0).toUpperCase()+ selectGesture.slice(1).toLowerCase();
+                //schrijf nog een functie om input te valideren!
+               
                 if((playerSelection=="Rock"&& computerSelection=="Paper")||(playerSelection=="Scissors"&& computerSelection=="Rock")||(playerSelection=="Paper"&& computerSelection=="Scissors")){
-                    return `You lose! ${computerSelection} beats ${playerSelection}!`;
+                    return 0
 
                 }
 
                 else if(computerSelection==playerSelection) {
-                    return "It's a tie!"
+                    return 1
 
                 }
 
-                else return `You Win! ${playerSelection} beats ${computerSelection}`;
+                else return 2;
+                }
+            
+        
+
+//finalescore in functie nog declareren
+            function playGame(){
+                let playerScore;
+                let computerScore;
+                let playerChoice=prompt();
+
+                for (let index = 0; index < 6; index++) {
+                    result=playRound(playerChoice);
+                    if(result==0){
+                        computerScore ++;
+                        console.log("The computer won!");
+                    }
+                    else if(result==2){
+                        playerScore ++;
+                        console.log("The Player has won!");
+                    }
+
+                    else if(result==0){
+                        console.log("It's a tie!");
+                    } 
+                }
+
+
 
             }
-
 
         </script>
 
