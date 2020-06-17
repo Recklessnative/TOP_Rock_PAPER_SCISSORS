@@ -45,6 +45,7 @@ function playRound(input){
     let playerSelection = input;
     console.log(playerScore);
     console.log(computerScore)
+    result.style.color="Black";
     
     if((playerSelection=="Rock"&& computerSelection=="Paper")||(playerSelection=="Scissors"&& computerSelection=="Rock")||(playerSelection=="Paper"&& computerSelection=="Scissors")){
         //Player loses
@@ -64,7 +65,33 @@ function playRound(input){
 
 playerScoreTxt.textContent= `Player: ${playerScore}`;
 computerScoreTxt.textContent= `Computer: ${computerScore}`;
+checkScores();
+
+
 }
+
+function checkScores(){
+    if(playerScore == 5){result.textcontent="You win!";
+    result.style.color="Green";
+    resetScores();
+    }
+    
+    else if(computerScore == 5){
+    result.textContent="You lose!";
+    result.style.color="Red";
+    resetScores();
+    
+    }
+
+}
+
+
+function resetScores(){
+playerScore = 0;
+computerScore = 0;
+}
+
+
 function playGame(){
    
 
